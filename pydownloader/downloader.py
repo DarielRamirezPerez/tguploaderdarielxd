@@ -4,7 +4,6 @@ import re
 import requests
 from . import googledrive
 from . import mediafire
-from .utils import req_file_size,get_file_size,get_url_file_name,slugify,createID
 
 class Downloader(object):
     def __init__(self,destpath=''):
