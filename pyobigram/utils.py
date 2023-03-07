@@ -3,19 +3,6 @@ import time
 import os
 import re
 
-def sizeof_fmt(num, suffix='B'):
-    for unit in ['','Ki','Mi','Gi','Ti','Pi','Ei','Zi']:
-        if abs(num) < 1024.0:
-            return "%3.1f%s%s" % (num, unit, suffix)
-        num /= 1024.0
-    return "%.1f%s%s" % (num, 'Yi', suffix)
-
-def req_file_size(req):
-    try:
-        return int(req.headers['content-length'])
-    except:
-        return 0
-
 def get_url_file_name(url,req):
     try:
         if "Content-Disposition" in req.headers.keys():
